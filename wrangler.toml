@@ -1,0 +1,33 @@
+# Cloudflare Workers configuration for MaskQL
+
+name = "maskql-example"
+main = "examples/worker.js"
+compatibility_date = "2024-01-01"
+
+# D1 Database bindings
+# このセクションは実際のデータベースを作成した後に設定します
+#
+# 1. D1データベースを作成:
+#    npx wrangler d1 create maskql-db
+#
+# 2. 出力されたdatabase_idをコピーして、下記の<YOUR_DATABASE_ID>を置き換えてください
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "maskql-db"
+# database_id = "<YOUR_DATABASE_ID>"
+
+# Workers設定
+[build]
+command = ""
+
+# 開発環境設定
+[env.development]
+name = "maskql-example-dev"
+
+# 本番環境設定
+[env.production]
+name = "maskql-example"
+
+# ローカル開発用のD1設定
+# ローカル開発時は自動的にローカルSQLiteが使用されます
