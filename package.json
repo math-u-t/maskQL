@@ -1,0 +1,53 @@
+{
+  "name": "maskql",
+  "version": "1.0.0",
+  "description": "JSON manipulation library for Cloudflare D1 - Store and query nested objects with ease",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./flatten": "./src/flatten.js",
+    "./types": "./src/types.js"
+  },
+  "files": [
+    "src",
+    "schema",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create maskql-db",
+    "db:init": "wrangler d1 execute maskql-db --file=./schema/init.sql",
+    "db:query": "wrangler d1 execute maskql-db --command"
+  },
+  "keywords": [
+    "cloudflare",
+    "d1",
+    "database",
+    "json",
+    "sqlite",
+    "workers",
+    "edge",
+    "key-value",
+    "storage",
+    "nested-objects"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/math-u-t/maskQL.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
